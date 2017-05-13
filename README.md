@@ -4,6 +4,8 @@
 
 The 4D Nucleome Analysis Toolbox (4D NAT) includes functions to load Hi-C matrices, Hi-C read data, and RNA-seq from text files, normalize Hi-C data, detect TADs, plotting, translocation exploration, or. Example scripts showing examples are available at: https://github.com/laseaman/4D_Nucleome_Analysis_Toolbox
 
+Lase updated: 5/13/2017
+
 ### Installation
 
 install 4DNucleomeAanalysisToolbox.mltbx by downloading and double clicking. Run examples by downloading .m files, opening and running in matlab. Suggested order: Load_Normalize.m, Tad_methods.m, TranslocationAnalysis_100kb.m, TranslocationAnalysis_read.m, PhasePlane.m
