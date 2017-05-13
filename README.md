@@ -16,13 +16,13 @@ Check to make sure the toolbox is installed by looking at: Home/Add-Ons/Manage A
 
     Load_Normalize_Example - loads 100kb chr8 Hi-C data from a text file. Then removes unmappable regions (repetative regions like centromeres), normalizes the data using three different methods and plots the raw and normalized matrices. The normalization methods are:
       1. Spectral Identification of Topological Domains by Chen et al, Bioinformatics May 2016
-      1. Nucleome analysis of a colorectal cancer cell line reveals structure-function relationships by Seaman et al, Mol Canc Res March 2017
-      1. Iterative Correction of Hi-C Data Reveals Hallmarks of Chromosome Organization by Imakaev et al, Nat Methods Oct 2012
+      2. Nucleome analysis of a colorectal cancer cell line reveals structure-function relationships by Seaman et al, Mol Canc Res March 2017
+      3. Iterative Correction of Hi-C Data Reveals Hallmarks of Chromosome Organization by Imakaev et al, Nat Methods Oct 2012
 
     TAD_methods - performs 3 methods of TAD calculation and plotting on a 100kb resolution chromsome 22 Hi-C matrix from fibroblasts. Normalization methods are:
       1. Spectral Identification of Topological Domains by Chen et al, 2016
-      1. Multiscale Identification of Topological Domain in Chromatin by Filippova et al, 2013
-      1. Topological domains in mammalian genomes identified by analysis of chromatin interactions by Dixon et al 2012
+      2. Multiscale Identification of Topological Domain in Chromatin by Filippova et al, 2013
+      3. Topological domains in mammalian genomes identified by analysis of chromatin interactions by Dixon et al 2012
       note: warnings "Matrix is singular to working precision." during TAD_HMM is normal.
 
     TranslocationAnalysis_100kb - Analyzes t(6;14) in 100 kb resolution data including identifying the site of translocation, and constructing the translocated chromosome. It also includesnormalizing Chr 6, 14, and t(6;14), and calculating TADs. Demonstrates plotting abilities including plotting Hi-C, RNA-seq, Fiedler vector, and TADs in one figure.
