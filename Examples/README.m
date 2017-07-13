@@ -19,7 +19,7 @@ function READ_ME()
 %
 % run examples by downloading .m files, opening and running in matlab.
 % suggested order: Load_Normalize.m, Tad_methods.m, TranslocationAnalysis_100kb.m, 
-%     TranslocationAnalysis_read.m, PhasePlane.m
+%     TranslocationAnalysis_read.m, PhasePortrait.m
 %
 % Package and examples are available for download from : 
 %   https://github.com/laseaman/4D_Nucleome_Analysis_Toolbox
@@ -66,14 +66,14 @@ function READ_ME()
 %       produced by Homer and other software. Uses read level data for HT-29 from 
 %       chromosmes 6 and 14 to identify the site of translocation at high resolution.
 %
-%   PhasePlane - demonstrates loading RNA-seq data and converting raw data into
-%       binned data. Plots time series data in three dimensions with the x-y 
-%       dimension showing Hi-C matrices and the z-direction showing time. Also
-%       calculate necessary data and and a phase plane which shows how
-%       structure, as measured by the Fiedler number and function as
-%       measured by the square root of the average FPKM for all genes in
-%       the chromosome (or region) for chromosome 22 fibroblast time
-%       series.
+%   PhasePortrait - demonstrates loading RNA-seq data and converting raw 
+%       data into binned data. Plots time series data in three dimensions 
+%       with the x-y dimension showing Hi-C matrices and the z-direction 
+%       showing time. Also calculate necessary data and and a phase portrait 
+%       which shows how structure, as measured by the Fiedler number and 
+%       function as measured by the square root of the average FPKM for all 
+%       genes in the chromosome (or region) for chromosome 22 and a single
+%       TAD in the chromsome for the fibroblast time series.
 %
 %% example data
 %
@@ -124,7 +124,10 @@ function READ_ME()
 %   Draw_TADs - plots Hi-C data with TAD boundaries overlaid
 %   FindGenBin - looks up a gene's location.
 %   FindGenLocation - Calculates which bin(s) a gene is locatated in.
-%   HiC_load - loads Hi-C matrices from text files (in homer format)
+%   HiC_load_cool - loads Hi-C matrices from .cool files, HDF5 binary sparse
+%       matrix format
+%   HiC_load_mat - loads n x n Hi-C matrices from text files (including 
+%       homer format)
 %   HiC_plot - plots Hi-C matrix in log2 scale
 %   HiC_remove_cent - removes centromeres from Hi-C matrices
 %   HicRna_plot - plots HiC, RNA-seq, TADs, and Fiedler vector in various
@@ -140,13 +143,24 @@ function READ_ME()
 %       Entropy, and more from matrices depending on provided type.
 %   PltFV - plots Fiedler vector bar graph with positive and negative
 %       values colored seperately
-%   PltPhasePlane - plots a phase plane showing a projection of structure
+%   PltPhasePlane - plots a phase portrait/plane showing a projection of structure
 %       and function over time.
 %   RNA2Bin - converts gene resolution RNA-seq data into bin resolution.
+%   saveHiC - prints a Hi-C matrix to a csv (text) file.
+%   saveTADs - prints vector of TAD bounds to a csv (text) file.
 %   TAD_DP1 - performs dynamic programming / multiscale TAD analysis
 %   TAD_HMM - performs Hiden Markov Model based algorithm for TAD analysis.
 %   TAD_Laplace - performs iterative, Fiedler number based TAD analysis
 %   ToepNorm - performs Toeplitz based normalization
 %   TranslocHiC - constructs translocated chromsomes matrices from parts
+%
+%% running via command line
+%
+% matlab files can be run edited by any text editor and run using the
+% command below. you may need to add the path to the matlab executable 
+% for some non-linux systems.
+%
+% matlab -r "NormAllChrs_Mb"
+% 
 
 end
