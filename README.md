@@ -31,7 +31,7 @@ Check to make sure the toolbox is installed by looking at: Home/Add-Ons/Manage A
 
     TranslocationAnalysis_read -  Loads read level data from output text files produced by Homer and other software. Uses read level data for HT-29 from chromosmes 6 and 14 to identify the site of translocation at high resolution.
 
-    PhasePlane - demonstrates loading RNA-seq data and converting raw data into binned data. Plots time series data in three dimensions with the x-y dimension showing Hi-C matrices and the z-direction showing time. Also calculate necessary data and and a phase plane which shows how structure, as measured by the Fiedler number and function as measured by the square root of the average FPKM for all genes in the chromosome (or region) for chromosome 22 fibroblast time series.
+    PhasePortrait - demonstrates loading RNA-seq data and converting raw data into binned data. Plots time series data in three dimensions with the x-y dimension showing Hi-C matrices and the z-direction showing time. Also calculate necessary data and and a phase plane which shows how structure, as measured by the Fiedler number and function as measured by the square root of the average FPKM for all genes in the chromosome (or region) for chromosome 22 and a single TAD in the chromsome for the fibroblast time series.
 
 ## Example data
     HT29_2D_12hr_100kb_chr8.txt - text file including 100 kb resolution chromosome 8 from a 12 hour time point of 2D grown HT-29 cells, originally published in Nucleome analysis of a colorectal cancer cell line reveals structure-function relationships by Seaman et al, Mol Canc Res March 2017 chr22_100kb_HiC_FibTS.mat - 100 kb resolution chr 22 RNA_seq and Hi-C matrix of all time points from Functional organization of the human 4D Nucleome by Chen et al 2015.
@@ -50,7 +50,8 @@ description of key functions overview, full documentation including descriptions
     Draw_TADs - plots Hi-C data with TAD boundaries overlaid
     FindGenBin - looks up a gene's location.
     FindGenLocation - Calculates which bin(s) a gene is locatated in.
-    HiC_load - loads Hi-C matrices from text files (in homer format)
+    HiC_load_cool - loads Hi-C matrices from .cool files, HDF5 binary sparse matrix format
+    HiC_load_mat - loads n x n Hi-C matrices from text files (including homer format)
     HiC_plot - plots Hi-C matrix in log2 scale
     HiC_remove_cent - removes centromeres from Hi-C matrices
     HicRna_plot - plots HiC, RNA-seq, TADs, and Fiedler vector in various combinations
@@ -59,8 +60,10 @@ description of key functions overview, full documentation including descriptions
     Load_TSV - loads tab seperated value files containing read pairs of Hi-C data.
     Mat2Val - calculate Fiedler number, Fiedler vector, Von Neumann Entropy, and more from matrices depending on provided type.
     PltFV - plots Fiedler vector bar graph with positive and negative values colored seperately
-    PltPhasePlane - plots a phase plane showing a projection of structure and function over time.
+    PltPhasePlane - plots a phase protrait/plane showing a projection of structure and function over time.
     RNA2Bin - converts gene resolution RNA-seq data into bin resolution.
+    saveHiC - prints a Hi-C matrix to a csv (text) file.
+    saveTADs - prints vector of TAD bounds to a csv (text) file.
     TAD_DP1 - performs dynamic programming / multiscale TAD analysis
     TAD_HMM - performs Hiden Markov Model based algorithm for TAD analysis.
     TAD_Laplace - performs iterative, Fiedler number based TAD analysis
